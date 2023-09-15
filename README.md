@@ -1,1 +1,1 @@
-# therm-control-system
+# thermal-control-system
