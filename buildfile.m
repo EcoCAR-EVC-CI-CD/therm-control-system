@@ -6,10 +6,16 @@ end
 
 function checkTask(~)
 % Identify code issues
+proj = openProject(pwd);
+
 issues = codeIssues;
 assert(isempty(issues.Issues),formattedDisplayText( ...
     issues.Issues(:,["Location" "Severity" "Description"])))
+
+% Run model advisor check
 modelAdvisorChecks;
+
+close(proj);
 end
 
 function testTask(~)
