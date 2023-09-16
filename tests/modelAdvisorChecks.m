@@ -6,7 +6,8 @@ checkIDs = {'mathworks.maab.jc_0021',...
 'mathworks.maab.jc_0061',...
 'mathworks.maab.db_0142'};
 
-systems = 'thermostat_demo.slx';
+systems = {'thermostatController_SimHarness',...
+    'thermostatController'};
 results = ModelAdvisor.run(systems,checkIDs);
 end
 
