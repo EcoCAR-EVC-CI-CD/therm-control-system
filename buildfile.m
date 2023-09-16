@@ -13,8 +13,12 @@ assert(isempty(issues.Issues),formattedDisplayText( ...
     issues.Issues(:,["Location" "Severity" "Description"])))
 
 % Run model advisor check
-modelAdvisorChecks;
-
+results = modelAdvisorChecks;
+totalFail = 0;
+for modelCheck = results
+    totalFail = totalFail + modelCheck{1}.numFail;
+end
+assert(totalFail == 0)
 close(proj);
 end
 
