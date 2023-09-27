@@ -36,4 +36,4 @@ jobs:
       - name: Run Checks
         uses: matlab-actions/run-build@v1
         with:
-          command: check
+          tasks: check
