@@ -1,4 +1,4 @@
-name: Run MATLAB Build
+name: MATLAB Build
 on:
   pull_request:
     branches:
@@ -20,11 +20,11 @@ jobs:
         with:
           release: R2023a
       - name: Run Tests
-        uses: matlab-actions/run-command@v1
+        uses: matlab-actions/run-build@v1
         with:
-          command: buildtool test
+          tasks: test
   run-checks:
-    name: Run Model Advisor Checks
+    name: Run Model Checks
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -34,6 +34,6 @@ jobs:
         with:
           release: R2023a
       - name: Run Checks
-        uses: matlab-actions/run-command@v1
+        uses: matlab-actions/run-build@v1
         with:
-          command: buildtool check
+          command: check
